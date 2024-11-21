@@ -6,6 +6,7 @@ const weatherdata = document.querySelector('.weather')
 const icon = document.createElement('weather-icon');
 
 searchbtn.addEventListener('submit',function(e) {
+    e.preventDefault();
     // console.log(input.value);   
     const cityname = input.value;
     getWeatherData(cityname)
