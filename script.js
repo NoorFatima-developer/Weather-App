@@ -13,5 +13,14 @@ searchbtn.addEventListener('submit',function(e) {
 });
 
 async function getWeatherData() {
-    const response = fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityname}&appid=${apikey}&units=metric`)
+    try{
+        const response =await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityname}&appid=${apikey}&units=metric`)
+        if(!response.ok) {
+            throw new Error("Network response is not ok!");
+        }
+        const data = response.json();
+    }catch(err){
+
+    }
+
 }
