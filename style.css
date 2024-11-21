@@ -18,3 +18,14 @@ body {
     color: #fff;
     background: linear-gradient(135deg, #00feba, #5b548a);
 }
+
+.search {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search input {
+    border: 0;
+}
