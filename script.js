@@ -6,7 +6,7 @@ const weatherdata = document.querySelector(".weather");
 const weathericon = document.querySelector(".weather-icon");
 // console.log(weathericon);
 
-search.addEventListener("click", function (e) {
+searchbtn.addEventListener("click", function (e) {
   e.preventDefault();
   //   console.log(input.value);
   const cityname = input.value;
@@ -32,6 +32,7 @@ async function getWeatherData(cityname) {
         Math.floor(data.main.temp) + "°c";
       document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
       document.querySelector(".wind").innerHTML = data.wind.speed + " km/h";
+      
 
       if (data.weather[0].main == "Clouds") {
         weatherdata.src = "images/clouds.png";
