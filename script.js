@@ -35,9 +35,9 @@ async function getWeatherData(cityname) {
       
 
       if (data.weather[0].main == "Clouds") {
-        weathericon.src = "/images/clouds.png";
+        weathericon.src = "images/clouds.png";
       } else if (data.weather[0].main == "Clear") {
-        weathericon.src = "/images/clear.png";
+        weathericon.src = "images/clear.png";
       } else if (data.weather[0].main == "Rain") {
         weathericon.src = "images/rain.png";
       } else if (data.weather[0].main == "Drizzle") {
