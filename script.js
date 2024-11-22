@@ -22,6 +22,12 @@ async function getWeatherData(cityname) {
     }
     const data = await response.json();
     console.log(data);
-    Math.floor(data.main.temp)
+    weatherdata.querySelector(".city").innerHTML = data.name
+    document.querySelector(".temp").innerHTML = Math.floor(data.main.temp)+ "°c";
+    document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
+    document.querySelector("wind").innerHTML = data.wind.speed + " km/h";
+
+
+    if(data.weather[0])
   } catch (err) {}
 }
