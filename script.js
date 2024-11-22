@@ -3,7 +3,9 @@ const search = document.querySelector(".search");
 const input = document.querySelector("#city-name");
 const searchbtn = document.querySelector(".btn");
 const weatherdata = document.querySelector(".weather");
-const icon = document.querySelector(".weather-icon");
+const weathericon = document.querySelector(".weather-icon");
+console.log(weathericon);
+
 
 search.addEventListener("click", function (e) {
   e.preventDefault();
@@ -17,34 +19,40 @@ async function getWeatherData(cityname) {
     const response = await fetch(
       `https://api.openweathermap.org/data/2.5/weather?q=${cityname}&appid=${apikey}&units=metric`
     );
-    if (!response.ok) {
-      throw new Error("Network response is not ok!");
-    }
+        if (!response.ok) {
+            throw new Error(`City not found or API error: ${response.statusText}`);
+          }
+
     const data = await response.json();
     console.log(data);
+    console.log("Weather Condition:", data.weather[0].main);
+
     weatherdata.querySelector(".city").innerHTML = data.name
     document.querySelector(".temp").innerHTML = Math.floor(data.main.temp)+ "°c";
     document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
     document.querySelector("wind").innerHTML = data.wind.speed + " km/h";
+    weathericon.querySelector(".weather-icon").innerHTML = data.weather[0].main
+          
 
-    
-    if(data.weather[0].main === "Clouds"){
-        icon.src = "./images/clouds.png"
+
+    if(data.weather[0].main == "Clouds"){
+        weatherdata.src = "images/clouds.png"
     }
     
-    else if(data.weather[0].main === "Clear"){
-        icon.src = "images/clear.png"
+    else if(data.weather[0].main == "Clear"){
+        weathericon.src = "images/clear.png"
     }
-    else if(data.weather[0].main === "Rain"){
-        icon.src = "images/rain.png"
+    else if(data.weather[0].main == "Rain"){
+        weathericon.src = "images/rain.png"
         
     }
-    else if(data.weather[0].main === "Drizzle"){
-        icon.src = "images/mist.png"
+    else if(data.weather[0].main == "Drizzle"){
+        weathericon.src = "images/drizzle.png"
     }
-    else if(data.weather[0].main === "Mist"){
-        icon.src = "images/mist.png"
+    else if(data.weather[0].main == "Mist"){
+        weathericon.src = "images/mist.png"
     }
 
+    
   } catch (err) {}
 }
