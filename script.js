@@ -4,7 +4,7 @@ const input = document.querySelector("#city-name");
 const searchbtn = document.querySelector(".btn");
 const weatherdata = document.querySelector(".weather");
 const weathericon = document.querySelector(".weather-icon");
-console.log(weathericon);
+// console.log(weathericon);
 
 
 search.addEventListener("click", function (e) {
@@ -19,11 +19,13 @@ async function getWeatherData(cityname) {
     const response = await fetch(
       `https://api.openweathermap.org/data/2.5/weather?q=${cityname}&appid=${apikey}&units=metric`
     );
-        if (!response.ok) {
+        if (response.status === 404) {
+            document.querySelector(".error").style.display = "block";
+            document.querySelector(".weather").style.display = "none";  
             throw new Error(`City not found or API error: ${response.statusText}`);
           }
-
-    const data = await response.json();
+        else{
+            const data = await response.json();
     // console.log(data);
     // console.log("Weather Condition:", data.weather[0].main);
 
@@ -50,9 +52,11 @@ async function getWeatherData(cityname) {
         weathericon.src = "images/mist.png"
     }
 
-    document.querySelector(".weather").style.display = "block"
-  
+    document.querySelector(".error").style.display = "none";
+    document.querySelector(".weather").style.display = "block";  
+        }
+    
   } catch (err) {
-    console.log(err); 
+    // console.log(err); 
   }
 }
