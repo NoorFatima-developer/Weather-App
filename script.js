@@ -30,10 +30,7 @@ async function getWeatherData(cityname) {
     weatherdata.querySelector(".city").innerHTML = data.name
     document.querySelector(".temp").innerHTML = Math.floor(data.main.temp)+ "°c";
     document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
-    document.querySelector("wind").innerHTML = data.wind.speed + " km/h";
-    weathericon.querySelector(".weather-icon").innerHTML = data.weather[0].main
-          
-
+    document.querySelector(".wind").innerHTML = data.wind.speed + " km/h";          
 
     if(data.weather[0].main == "Clouds"){
         weatherdata.src = "images/clouds.png"
@@ -54,5 +51,7 @@ async function getWeatherData(cityname) {
     }
 
     
-  } catch (err) {}
+  } catch (err) {
+
+  }
 }
