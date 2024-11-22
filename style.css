@@ -204,7 +204,7 @@ body {
 
   .search input {
     font-size: 12px;
-    /* padding: 10px 25px; */
+    padding: 10px 25px;
   }
 
   .weather h1 {
