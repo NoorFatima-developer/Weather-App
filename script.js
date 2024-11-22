@@ -46,10 +46,11 @@ async function getWeatherData(cityname) {
         weathericon.src = "images/mist.png";
       }
 
-      document.querySelector(".error").style.display = "none";
-      document.querySelector(".weather").style.display = "block";
+      
     }
   } catch (err) {
     // console.log(err);
+    document.querySelector(".error").style.display = "none";
+    document.querySelector(".weather").style.display = "block";
   }
 }
