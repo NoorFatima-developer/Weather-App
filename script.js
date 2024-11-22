@@ -24,8 +24,8 @@ async function getWeatherData(cityname) {
           }
 
     const data = await response.json();
-    console.log(data);
-    console.log("Weather Condition:", data.weather[0].main);
+    // console.log(data);
+    // console.log("Weather Condition:", data.weather[0].main);
 
     weatherdata.querySelector(".city").innerHTML = data.name
     document.querySelector(".temp").innerHTML = Math.floor(data.main.temp)+ "°c";
@@ -50,9 +50,9 @@ async function getWeatherData(cityname) {
         weathericon.src = "images/mist.png"
     }
 
-    
+    document.querySelector(".weather").style.display = "block"
+  
   } catch (err) {
-    console.log(err);
-    
+    console.log(err); 
   }
 }
