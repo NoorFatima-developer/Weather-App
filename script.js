@@ -52,6 +52,7 @@ async function getWeatherData(cityname) {
 
     
   } catch (err) {
-
+    console.log(err);
+    
   }
 }
