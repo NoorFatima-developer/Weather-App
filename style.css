@@ -52,7 +52,7 @@ body {
 }
 
 .search button:hover {
-  background: #00feba;
+  background: hsl(164, 42%, 64%);
 }
 
 .search button img {
