@@ -121,7 +121,7 @@ body {
   }
 
   .search input {
-    font-size: 5px;
+    font-size: 12px;
     /* padding: 8px 15px; */
   }
 
@@ -165,8 +165,8 @@ body {
   }
 
   .search input {
-    font-size: 15px;
-    padding: 9px 20px;
+    font-size: 12px;
+    /* padding: 9px 20px; */
   }
 
   .weather h1 {
@@ -203,8 +203,8 @@ body {
   }
 
   .search input {
-    font-size: 16px;
-    padding: 10px 25px;
+    font-size: 12px;
+    /* padding: 10px 25px; */
   }
 
   .weather h1 {
