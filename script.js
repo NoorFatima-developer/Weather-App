@@ -28,6 +28,18 @@ async function getWeatherData(cityname) {
     document.querySelector("wind").innerHTML = data.wind.speed + " km/h";
 
 
-    if(data.weather[0])
+    if(data.weather[0].main === "Clouds"){
+        icon.src = "images/clouds.png"
+    }
+    else if(data.weather[0].main === "Clear"){
+        icon.src = "images/clear.png"
+    }
+    else if(data.weather[0].main === "Rain"){
+        icon.src = "images/rain.png"
+    }
+    else if(data.weather[0].main === "Drizzle"){
+        icon.src = "images/mist.png"
+    }
+
   } catch (err) {}
 }
