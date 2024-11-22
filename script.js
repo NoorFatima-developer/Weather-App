@@ -6,7 +6,7 @@ const weatherdata = document.querySelector(".weather");
 const weathericon = document.querySelector(".weather-icon");
 // console.log(weathericon);
 
-searchbtn.addEventListener("click", function (e) {
+search.addEventListener("click", function (e) {
   e.preventDefault();
   //   console.log(input.value);
   const cityname = input.value;
@@ -46,11 +46,13 @@ async function getWeatherData(cityname) {
         weathericon.src = "images/mist.png";
       }
 
+    document.querySelector(".error").style.display = "none";
+    document.querySelector(".weather").style.display = "block";
+
       
     }
   } catch (err) {
     // console.log(err);
-    document.querySelector(".error").style.display = "none";
-    document.querySelector(".weather").style.display = "block";
+    
   }
 }
