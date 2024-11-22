@@ -3,7 +3,7 @@ const search = document.querySelector(".search");
 const input = document.querySelector("#city-name");
 const searchbtn = document.querySelector(".btn");
 const weatherdata = document.querySelector(".weather");
-const icon = document.createElement("weather-icon");
+const icon = document.querySelector(".weather-icon");
 
 search.addEventListener("click", function (e) {
   e.preventDefault();
@@ -38,6 +38,9 @@ async function getWeatherData(cityname) {
         icon.src = "images/rain.png"
     }
     else if(data.weather[0].main === "Drizzle"){
+        icon.src = "images/mist.png"
+    }
+    else if(data.weather[0].main === "Mist"){
         icon.src = "images/mist.png"
     }
 
