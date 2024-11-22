@@ -114,7 +114,7 @@ body {
   display: none;
 }
 
-//* For small screens like mobile (up to 480px) */
+/* For small screens like mobile (up to 480px) */
 @media (max-width: 350px) {
   .card {
     padding: 20px 15px;
