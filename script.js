@@ -24,7 +24,7 @@ async function getWeatherData(cityname) {
       throw new Error(`City not found or API error: ${response.statusText}`);
     } else {
       const data = await response.json();
-      // console.log(data);
+      console.log(data);
       // console.log("Weather Condition:", data.weather[0].main);
 
       weatherdata.querySelector(".city").innerHTML = data.name;
@@ -33,6 +33,7 @@ async function getWeatherData(cityname) {
       document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
       document.querySelector(".wind").innerHTML = data.wind.speed + " km/h";
       
+    
 
       if (data.weather[0].main == "Clouds") {
         weathericon.src = "images/clouds.png";
